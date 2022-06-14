@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+:root {
+  --Soft-red: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--Cream);
+}
+
+.header {
+  background-color: var(--Soft-red);
+  width: 33.75rem;
+  margin-bottom: 1.5625rem;
+  padding: 2rem;
+}
+
+.header h2 {
+  font-weight: 700;
+}
+
+.chart {
+  width: 33.75rem;
+  background-color: var(--Very-pale-orange);
+  padding: 2rem;
+}
+
+.chart .title {
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--Dark-brown);
+  margin-bottom: 2rem;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart p {
+  color: var(--Medium-brown);
+  margin-bottom: 0.4rem;
+}
+
+.chart .chart-footer .chart-left h1 {
+  font-weight: 700;
+  color: var(--Dark-brown);
+}
+
+.chart .chart-footer .chart-right small {
+  color: var(--Dark-brown);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.chart .chart-footer .chart-right p {
+  margin: 0;
+}
+
+.chart-box {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chart-box .days {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  color: var(--Medium-brown);
+  font-size: 13px;
+}
+
+.chart-box .days div {
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-box .bars {
+  width: 100%;
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.chart-box .bars div {
+  display: flex;
+  width: 2.5rem;
+  background-color: var(--Soft-red);
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  position: relative;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+
+.chart-box .bars div:hover {
+  background-color: rgb(252, 152, 131);
+}
+
+.chart-box .bars .wed {
+  background-color: var(--Cyan);
+}
+
+.chart-box .bars .wed:hover {
+  background-color: hsl(186deg 40% 71%);
+}
+
+.chart-box .bars div::before {
+  content: attr(data-amount);
+  color: white;
+  position: absolute;
+  background-color: var(--Dark-brown);
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  padding: 0.2rem 0.3rem;
+  display: none;
+}
+
+.chart-box .bars div:hover::before {
+  display: block;
+}
+
+.chart-box .bars .mon::before {
+  top: -90%;
+  left: -5%;
+}
+.chart-box .bars .tue::before {
+  top: -46%;
+  left: -7%;
+}
+.chart-box .bars .wed::before {
+  top: -30%;
+  left: -12%;
+}
+.chart-box .bars .thu::before {
+  top: -51%;
+  left: -7%;
+}
+.chart-box .bars .fri::before {
+  top: -68%;
+  left: -10%;
+}
+.chart-box .bars .sat::before {
+  top: -36%;
+  left: -10%;
+}
+.chart-box .bars .sun::before {
+  top: -62%;
+  left: -10%;
+}
+
+@media (max-width: 540px) {
+  .header {
+    width: 21.25rem;
+    padding: 1.5rem;
+  }
+  .chart {
+    width: 21.25rem;
+    padding: 1.5rem;
+  }
+  .chart .title {
+    font-size: 22px;
+  }
+  .chart-box .bars div {
+    width: 1.5rem;
+  }
+  .chart-box .bars div::before {
+    font-size: 10px;
+  }
+}
+
+@media (width: 280px) {
+  .header {
+    width: 16rem;
+  }
+  .header .left-side p {
+    font-size: 13px;
+  }
+  .header .left-side h1 {
+    font-size: 25px;
+  }
+  .chart {
+    width: 16rem;
+  }
+  .chart h1 {
+    font-size: 16px;
+  }
+  .chart-box .bars div {
+    width: 1rem;
+  }
+  .chart-box .bars div::before {
+    font-size: 6px;
+  }
+}
